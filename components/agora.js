@@ -18,7 +18,7 @@ if (!Agora) {
 
 const {
   FPS30,
-  FixedLandscape,
+  Adaptative,
   Host,
   AudioProfileDefault,
   AudioScenarioDefault,
@@ -129,7 +129,7 @@ export default class AgoraComponent extends Component<Props> {
         height: 480,
         bitrate: 1,
         frameRate: FPS30,
-        orientationMode: FixedLandscape,
+        orientationMode: Adaptative,
       },
       clientRole: Host,
       audioProfile: AudioProfileDefault,
@@ -313,6 +313,7 @@ export default class AgoraComponent extends Component<Props> {
         onPress={() => this.onPressVideo(uid)}
         key={key}>
       <AgoraView
+          mode={1}
           style={styles.remoteView}
           zOrderMediaOverlay={true}
           remoteUid={uid}
@@ -337,6 +338,7 @@ export default class AgoraComponent extends Component<Props> {
           visible: false
       })} >
         <AgoraView
+          mode={1}
           style={{flex: 1}}
           zOrderMediaOverlay={true}
           remoteUid={this.state.selectedUid}
@@ -360,7 +362,7 @@ export default class AgoraComponent extends Component<Props> {
         onPress={this.toggleHideButtons}
         style={styles.container}
       >
-        { this.state.showVideo ? <AgoraView style={styles.localView} showLocalVideo={this.state.showVideo} /> : null}
+        { this.state.showVideo ? <AgoraView  mode={1} style={styles.localView} showLocalVideo={this.state.showVideo}/> : null}
           <View style={styles.absView}>
             <Text>channelName: {this.props.channelName}, peers: {this.state.peerIds.length}</Text>
             {this.agoraPeerViews(this.state)}

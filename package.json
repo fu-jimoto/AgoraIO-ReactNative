@@ -9,7 +9,7 @@
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.9",
-    "react-native-agora": "^2.4.0-alpha.4"
+    "react-native-agora": "^2.4.1-alpha.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
